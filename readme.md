@@ -50,4 +50,4 @@ ID - [Sekrip Gabut - For those whom needs it, well, nobody need it anyway....](h
 → [Proot-Distro](https://github.com/termux/proot-distro), a great Termux toolset for installing latest Linux Distros, unlike [Andronix](https://github.com/AndronixApp/AndronixOrigin), they're all outdated and mostly LTS.<br/>
 → Of course, our main star, it's [Proot](https://github.com/termux/proot)!<br/>
 → *Something's hiding inside this script, can you find it?*
-# d_e-installer-proot-termux
+
