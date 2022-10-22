@@ -1,6 +1,6 @@
 ### XFCE4 Desktop Environment installer script for Proot-distro Distros (Debian based Linux).
 
-**Reminder!**
+**Reminder!**<br/>
 This script was made for any Debian Based Distros that runs inside Proot, it won't work outside Proot (unless if you're brave enough to broke your Termux), but don't worry, the script won't run if you accidentally execute it outside Proot Container.
 
 ## To sum it all....
@@ -14,7 +14,7 @@ A simple yet long (and also interactive) Desktop Environment installer for any D
 4. apt-utils
 5. neofetch
 
-Can be satisfied with running `installdeps.sh`.
+Can be satisfied with running `installdeps.sh`.<br/>
 Isn't that simple? Of course, **I do care about those beginners.**
 # Oh, yas...the features...
 1. Managing your DE (fixing, purging, installing).
@@ -36,18 +36,18 @@ Then... Make it happen..
 4. Some cute anime characters that dances inside this script.
 5. Back to number two.
 ## Special thanks to.
-[Yonle](https://github.com/Yonle)
-He's a good guy, trust me, he helped me for all of these mess...
+[Yonle](https://github.com/Yonle)<br/>
+He's a good guy, trust me, he helped me for all of these mess...<br/>
 [Myself because nobody wants to make it](https://github.com/datbadwolf97)
 ## Another one...
-[YTMSDLv2 - A simple yet powerful YT Music Downloader](https://github.com/datbadwolf97/YTMSDLv2)
+[YTMSDLv2 - A simple yet powerful YT Music Downloader](https://github.com/datbadwolf97/YTMSDLv2).<br/>
 ID - [Sekrip Gabut - For those whom needs it, well, nobody need it anyway....](https://github.com/datbadwolf97/skrip-gabut)
 
 ## Extras
 
-→ This script was entirely made in [Samsung Galaxy A03](https://www.gsmarena.com/samsung_galaxy_a03-11244.php).
-→ Call me a n00b because I'm using [nano](https://www.nano-editor.org/) as my main text editor, well, you can't blame on me since nano was easy to use.
-→ [Proot-Distro](https://github.com/termux/proot-distro), a great Termux toolset for installing latest Linux Distros, unlike [Andronix](https://github.com/AndronixApp/AndronixOrigin), they're all outdated and mostly LTS.
-→ Of course, our main star, it's [Proot](https://github.com/termux/proot)!
+→ This script was entirely made in [Samsung Galaxy A03](https://www.gsmarena.com/samsung_galaxy_a03-11244.php).<br/>
+→ Call me a n00b because I'm using [nano](https://www.nano-editor.org/) as my main text editor, well, you can't blame on me since nano was easy to use.<br/>
+→ [Proot-Distro](https://github.com/termux/proot-distro), a great Termux toolset for installing latest Linux Distros, unlike [Andronix](https://github.com/AndronixApp/AndronixOrigin), they're all outdated and mostly LTS.<br/>
+→ Of course, our main star, it's [Proot](https://github.com/termux/proot)!<br/>
 → *Something's hiding inside this script, can you find it?*
 # d_e-installer-proot-termux
