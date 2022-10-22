@@ -25,7 +25,7 @@ Isn't that simple? Of course, **I do care about those beginners.**
 # How to basic.
 Clone this repo, then :
 ```
-cd de-installer
+cd d_e-installer-proot-termux
 chmod u+x installer.sh installdeps.sh
 ```
 Then... Make it happen..
