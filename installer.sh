@@ -36,7 +36,7 @@ function mainmenu
   echo "====================================================="
   echo "Choose an option below."
   echo " "
-  echo -e "1.   Full Installation (Extended with various plugins). \n2.   Standard Installation (Basic XFCE4 DE with minimal plugins). \n3.   Lite Installation (DE only, no plugins). \n4.   Install DE only (in case you'd like to use XSDL instead of VNC). \n5.   Multimedia installer (Metapackages). \n6.   PAM Fixer. \n7.   SUDO unlock. \n8.   Fix DE. \n9.   Uninstall DE. \n10.   Create and copy the XSTARTUP script. \n11.   Fix XSTARTUP script. \n12.   Create the 'vnc-start' script. \n13.  Check your system hardwares. \n14.  Help and About. \n15.  Exit."
+  echo -e "1.   Full Installation (Extended with various plugins). \n2.   Standard Installation (Basic XFCE4 DE with minimal plugins). \n3.   Lite Installation (DE only, no plugins). \n4.   Install DE only (in case you'd like to use XSDL instead of VNC). \n5.   Multimedia installer (Metapackages). \n6.   PAM Fixer. \n7.   SUDO unlock. \n8.   Fix DE. \n9.   Uninstall DE. \n10.  Create and copy the XSTARTUP script. \n11.  Fix XSTARTUP script. \n12.  Create the 'vnc-start' script. \n13.  Check your system hardwares. \n14.  Help and About. \n15.  Exit."
   echo " "
   read -p "Your option, sir : " optisel1
   	if [ $optisel1 -eq 1 ]
@@ -89,6 +89,7 @@ function mainmenu
   	exit
   	else
   	echo "Uhmmm what? There was no $optisel1 option above."
+  	sleep 1.2
   	fi
 }
 
@@ -438,10 +439,11 @@ function xfce4onlyinstall
 function mminstall
 {
 	while true; do
+	clear
 	echo "Multimedia Installer (Metapackages)."
 	echo "=========================================="
 	echo "Select the packages you'd like to install."
-	echo -e "1. Audacious Audio player. \n2. MPV Video Player. \n3. FFMPEG Codecs Libraries. \n4. I want all of them. \5. nvm, take me back..."
+	echo -e "1. Audacious Audio player. \n2. MPV Video Player. \n3. FFMPEG Codecs Libraries. \n4. I want all of them. \n5. nvm, take me back..."
 	read -p "Your input here : " mminput1
 		if [ $mminput1 -eq 1 ]; then
 			if [ whoami == root ]; then
@@ -604,7 +606,8 @@ function fix_xstartup
 {
 	echo "Aight, let me see if there was an xstartup script on /home directory."
 	sleep 1.1
-	if find $HOME/.vnc/xstartup 2>/dev/null
+	updatedb
+	if locate xstartup 2>/dev/null
 	then
 	echo "Nope, aight let me fix this problem, hang on."
 	sleep 1.1
@@ -640,7 +643,7 @@ function makevncstartscript
 	sleep 1.2
 	cat <<- EOF > vnc-start
 #!/bin/sh
-case $1 in
+case \$1 in
 	v|vertical)
 	vncserver -geometry ${w1}x${h1} :${portnum1}
 	;;
@@ -671,7 +674,7 @@ function help_and_about
 	echo -e "1. Debian. \n2. Ubuntu."
 	echo "=================================================="
 	echo "This script depends on these packages (can be fulfilled with executing installdeps.sh) : "
-	echo -e "1. sudo. \n2. procps. \n3. apt-utils.\n4. neofetch."
+	echo -e "1. sudo. \n2. procps. \n3. apt-utils.\n4. neofetch. \n6. mlocate"
 	echo "=================================================="
 	echo "Installation sizes on each options : "
 	echo -e "1. Full Installation : DL 210MB INS 840MB. \n2. Medium Installation : DL 197MB INS 779MB. \n3. Lite Installations : DL 90.3MB INS 371MB."
@@ -695,7 +698,7 @@ function help_and_about
 	echo "Created by datbadwolf97."
 	echo "Contributor : Yonle (YonleCoder)."
 	echo "--------------------------------------------------"
-	echo "Version 0.1 beta."
+	echo "Version 0.5 beta."
 	echo "=================================================="
 	read -p "Press ENTER to go back."
 	clear
