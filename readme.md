@@ -13,6 +13,7 @@ A simple yet long (and also interactive) Desktop Environment installer for any D
 3. procps
 4. apt-utils
 5. neofetch
+6. mlocate
 
 Can be satisfied with running `installdeps.sh`.<br/>
 Isn't that simple? Of course, **I do care about those beginners.**
