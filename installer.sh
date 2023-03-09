@@ -568,10 +568,10 @@ function purge_de
 	sleep 1.1
 		if [ whoami != root ]
 		then
-		#sudo apt purge xfce4-* tigervnc-standalone-server -y
+		sudo apt purge xfce4-* tigervnc-standalone-server -y
 		echo "Y"
 		else
-		#apt purge xfce4 xfce4-* tigervnc-standalone-server -y
+		apt purge xfce4 xfce4-* tigervnc-standalone-server -y
 		echo "N"
 		fi
 	return
