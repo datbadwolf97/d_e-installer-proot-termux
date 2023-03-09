@@ -14,6 +14,7 @@ else
 fi
 echo "Checking if this script was running on proot or not."
 sleep 1
+## Checks if this script is indeed running under PROOT environment, would exits automatically if it's not.
 if pgrep -x "proot" >/dev/null
 then
 	echo "Yep, it is."
@@ -25,10 +26,14 @@ else
 	exit
 fi
 clear
-
+## Codes starts here.
 function mainmenu
 {
+  if command -v chafa >/dev/null; then
   chafa logo.png --size 15
+  else
+  echo "Chafa is not installed."
+  fi
   echo "====================================================="
   echo -e "Welcome to Desktop Environment XFCE4 Installer/manager. \nFor Debian/Ubuntu/Debian based distros."
   echo "====================================================="
@@ -549,16 +554,12 @@ function sudo_unlock
 function purge_de
 {
 	clear
-	echo "Purging the DE."
-	sleep 1
-	echo "3"
-	sleep 1
-	echo "2"
-	sleep 1
-	echo "1"
-	sleep 1
-	while true
-	do
+	local i=1
+	for i in $(seq 3 -1 1); do
+		echo "Purging the DE in $i."
+		sleep 1
+	done
+	while true; do
 	clear
 	read -p "Wait, hold up, are you sure about this (yes/no)? " confirmq1
 	if [ $confirmq1 == "yes" ]
@@ -567,9 +568,11 @@ function purge_de
 	sleep 1.1
 		if [ whoami != root ]
 		then
-		sudo apt purge xfce4-* tigervnc-standalone-server -y
+		#sudo apt purge xfce4-* tigervnc-standalone-server -y
+		echo "Y"
 		else
-		apt purge xfce4 xfce4-* tigervnc-standalone-server -y
+		#apt purge xfce4 xfce4-* tigervnc-standalone-server -y
+		echo "N"
 		fi
 	return
 	elif [ $confirmq1 == "no" ]
